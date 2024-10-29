@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold text-white">
-          <a href="#">AppleNest</a>
+          <a href="#">CountryData</a>
         </div>
 
         {/* Menu Items */}

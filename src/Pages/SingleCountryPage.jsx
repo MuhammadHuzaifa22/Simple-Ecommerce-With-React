@@ -101,18 +101,6 @@ const SingleCountryPage = () => {
 
   const country = singleCountry[0];
 
-  const fruits = [
-    "Apple",
-    "Banana",
-    "Orange",
-    "Mango",
-    "Strawberry",
-    "Pineapple",
-    "Grapes",
-    "Peach",
-    "Kiwi",
-    "Blueberry",
-  ];
 
   function filterFunction() {
     
@@ -126,13 +114,7 @@ const SingleCountryPage = () => {
 
   return (
     <div className="country-detail bg-white p-6 rounded-lg shadow-lg w-full md:w-2/3 lg:w-1/2 mx-auto text-center flex flex-col items-center">
-      <input
-        type="text"
-        className="text-3xl text-black border-[1px] "
-        placeholder="Enter"
-        onChange={filterFunction}
-        ref={inputValue}
-      />
+    
       {country.flags && country.flags.png && (
         <img
           src={country.flags.png}

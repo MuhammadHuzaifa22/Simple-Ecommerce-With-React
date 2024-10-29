@@ -164,27 +164,54 @@ const AllCountriesData = () => {
     { cca3: "USA", name: "United States" },
   ];
 
-  function filterCountries() {
+  function seacrhForFilter(){
     if(filterInputValue.current.value === '' || filterInputValue.current.value === null){
       alert('Please Enter a country you want.');
       return
-    }
+  }
+  // if((filterCountry !== null || filterCountry !== '') && filterCountry === filterInputValue.current.value ){
+  //   alert('Filter values are same');
+  //   setSearchCondition(true);
+  //   setTimeout(()=>{
+  //     setSearchCondition(false);
+  //   },3000)
+  //   return
+  // }
+  
+  setFilterCountry(filterInputValue.current.value);
+  
+  if(filterCountry === filterInputValue.current.value){
+    console.log('You are currenty on your desired country.')
+  }
+  console.log(filterCountry);
+  filterInputValue.current.value = '';
 
-    if((filterCountry !== null || filterCountry !== '') && filterCountry === filterInputValue.current.value && tod){
-      console.log('Filter values are same');
-      setSearchCondition(true);
-      setTimeout(()=>{
-        setSearchCondition(false);
-      },3000)
-      filterInputValue.current.value = '';
+  }
+
+  function filterCountries() {
+    if(filterInputValue.current.value === '' || filterInputValue.current.value === null){
       return
     }
-    setFilterCountry(filterInputValue.current.value);
+    
+    if((filterCountry !== null || filterCountry !== '') && filterCountry === filterInputValue.current.value ){
+      if(filterInputValue.current.value.length >= 3){
+        setTimeout(()=>{
+          alert('Filter values are same');
+        },500)
+        
+        return
+      }
+    }
+    
+    if(filterInputValue.current.value.length >= 3){
+      setFilterCountry(filterInputValue.current.value);
+      console.log('Filter country length is equal or upto 2 ...')
+    }
     if(filterCountry === filterInputValue.current.value){
       console.log('You are currenty on your desired country.')
     }
     console.log(filterCountry);
-    filterInputValue.current.value = '';
+
   }
 
   useEffect(() => {
@@ -207,9 +234,9 @@ const AllCountriesData = () => {
       headers: myHeaders,
       redirect: "follow",
     };
-    setSearchBtnLoadingCondition(true);
-
+    
     if (filterCountry !== "" && filterCountry !== null) {
+      setSearchBtnLoadingCondition(true);
       countriesCca3.map((item) => {
         console.log(item.name);
         if (filterCountry.toLowerCase() === item.name.toLowerCase()) {
@@ -280,13 +307,14 @@ const AllCountriesData = () => {
   return (
     <div className="container mx-auto p-6">
       {countries.length > 0 ? (
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center mb-5">
          <div className="relative w-full max-w-md">
   <input
     type="text"
     placeholder="Search for country..."
     className="w-full pl-10 pr-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-black transition duration-300 ease-in-out"
     ref={filterInputValue}
+    onChange={filterCountries}
   />
   <div className="absolute left-3 top-2/4 transform -translate-y-1/2">
     {/* Search Icon SVG */}
@@ -315,7 +343,7 @@ const AllCountriesData = () => {
   </svg>
   Searching
 </button>
- : <button onClick={filterCountries} className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 ease-in-out">
+ : <button  onClick={seacrhForFilter} className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 ease-in-out">
   <svg className="w-5 h-5 mr-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M10 2a8 8 0 106.32 13.906l4.387 4.387a1 1 0 001.415-1.415l-4.387-4.387A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z" />
   </svg>

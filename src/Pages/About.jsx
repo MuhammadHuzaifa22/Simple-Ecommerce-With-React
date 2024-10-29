@@ -4,22 +4,22 @@ import img1 from '../assets/Images/profile image.png';
 const About = () => {
   return (
     <div className="bg-gray-900 text-gray-200">
-      {/* Hero Section */}
+
       <section className="bg-gradient-to-r from-gray-800 to-gray-900 py-20">
         <div className="container mx-auto text-center px-6">
           <h1 className="text-5xl font-bold text-white mb-4">
-            About AppleNest
+            About CountryData
           </h1>
           <p className="text-lg text-gray-300 mb-8">
-            Discover the passion behind our innovative Apple products and our commitment to delivering excellence.
+            I will complete this.
           </p>
         </div>
       </section>
 
-      {/* About Information */}
-      <section className="py-20 px-6">
+      
+      {/* <section className="py-20 px-6">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
-          {/* Personal Information */}
+      
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h2 className="text-3xl font-bold text-white mb-4">
               Meet the Founder
@@ -32,7 +32,7 @@ const About = () => {
             </p>
           </div>
 
-          {/* Image */}
+      
           <div className="md:w-1/2">
             <img
            src={img1}
@@ -41,19 +41,19 @@ const About = () => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Product Details */}
-      <section className="bg-gray-800 py-20 px-6">
+      
+      {/* <section className="bg-gray-800 py-20 px-6">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-8">
             Our Products
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Product 1 */}
+            
             <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
               <img
-                src="https://example.com/product1.jpg" // Replace with your actual product image URL
+                src="https://example.com/product1.jpg" 
                 alt="Product 1"
                 className="w-full h-32 object-cover rounded-lg mb-4"
               />
@@ -64,10 +64,10 @@ const About = () => {
                 The iPhone Pro combines cutting-edge technology with sleek design, offering an unparalleled user experience.
               </p>
             </div>
-            {/* Product 2 */}
+            
             <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
               <img
-                src="https://example.com/product2.jpg" // Replace with your actual product image URL
+                src="https://example.com/product2.jpg" 
                 alt="Product 2"
                 className="w-full h-32 object-cover rounded-lg mb-4"
               />
@@ -78,10 +78,10 @@ const About = () => {
                 The iPad Air is designed for versatility and performance, making it perfect for both work and play.
               </p>
             </div>
-            {/* Product 3 */}
+          
             <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
               <img
-                src="https://example.com/product3.jpg" // Replace with your actual product image URL
+                src="https://example.com/product3.jpg" 
                 alt="Product 3"
                 className="w-full h-32 object-cover rounded-lg mb-4"
               />
@@ -97,7 +97,7 @@ const About = () => {
             Check All Products
           </button>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
